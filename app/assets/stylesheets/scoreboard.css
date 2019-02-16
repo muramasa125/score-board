@@ -1,0 +1,161 @@
+@charset "UTF-8";
+.wrapper {
+    background-color:#228b22;
+    padding: 2px;
+}
+.score-board {
+    margin: auto;
+    padding : auto 1px;
+}
+
+.match-status {
+    /*position: relative;*/
+    /* margin: 5px; */
+    background-color:white;
+    /*padding: 2px;*/
+    border: solid 2px;
+    height: 100px;
+}
+
+.player-info {
+    font-size: 16px;
+   /* position: relative; */
+    float: left;
+    overflow: auto;
+ }
+
+.player-name {
+    height: 40px;
+    line-height: 39px;
+}
+ 
+.player2 {
+    border-top: 1px solid #cbcbcb;
+}
+
+.server-info span, .winner-info span {
+    height: 40px;
+}
+
+.glyphicon-arrow-left, .glyphicon-ok {
+    padding-top: 10px;
+    color: #54008b;
+}
+
+.result-wrapper {
+    font-size: 16px;
+    color: #54008b;
+}
+
+.set, .pts, .result, .server-info, .winner-info {
+    float: left;
+    text-align: center;
+}
+
+.pts {
+    padding: 10px 0px;
+    height: 80px;
+}
+
+pts-1, pts-2 {
+    height: 30px;
+}
+
+.set {
+    padding: 10px 0px;
+    height: 80px;
+}
+
+.score {
+    height: 30px;
+}
+
+.set-info, pts-info {
+    height: 20px;
+}
+
+.input-point, .stats-wrraper {
+    clear: both;
+}
+
+.pts-info, .set-info {
+    font-size: 9px;
+    color: #bbb;
+}
+
+.player1-button {
+    float: left;
+}
+
+.player2-button {
+    float: right;
+}
+
+.tiebreak {
+    position: relative;
+    font-size: 9px;
+    top: -0.8em;
+}
+
+.stats-wrraper {
+    background-color: white;
+    overflow: auto;
+}
+
+.stats-player-name {
+    margin: 5px;
+}
+
+.stats-player-name .stats-player-name1 {
+    text-align: left;
+    float: left;
+    padding: 5px;
+}
+
+.stats-player-name .stats-player-name2 {
+    text-align: right;
+    float: right;
+    padding: 5px;
+}
+
+.stats {
+    background-color: white;
+    border: 2px solid #4e2683;
+    overflow: auto;
+    margin: 5px; 
+    clear: both;
+}
+
+.stats-detail {
+    padding:5px 5px;
+    overflow: auto;
+    border-bottom: 1px solid #cbcbcb;
+}
+
+.stats-player1, .stats-player2, .stats-info {
+    float: left;
+    font-size: 12px;
+    color: #54008b;
+}
+
+.stats-player1 {
+    text-align: left;
+    width: 25%;
+}
+
+.stats-player2 {
+    text-align: right;
+    width: 25%;
+}
+
+.stats-info {
+    text-align: center;
+    width: 50%;
+}
+
+.unvisible {
+    color: white;
+}
+.point-detail {
+    margin-left: 20px;
+}

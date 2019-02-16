@@ -1,5 +1,11 @@
-<div class="center jumbotron">
-  <div class="text-center">
-    <h1>Tennis Score Board</h1>
+<% if logged_in? %>
+  <p>user name：<%= current_user.name %></p>
+  <%= render 'games/games', games: @games %>
+<% else %>
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1>Tennis Score Board</h1>
+      <%= link_to 'Sign up', signup_path, class: 'btn btn-primary' %>
+    </div>
   </div>
-</div>
+<% end %>

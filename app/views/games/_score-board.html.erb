@@ -1,0 +1,198 @@
+<!--<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Score Board</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+</head>
+<body>
+	<!--<nav class="navbar navbar-default" style="">
+	  <div class="container-fluid bg-info">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Score Board</a>
+	    </div>
+	
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="#">setting<span class="sr-only">(current)</span></a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>-->
+	<div class="score-board">
+		<div ="status-wrapper">
+			<div class="match-status">
+				<div class="player-info col-xs-3">
+					<div class="player-name player1">Player1</div>
+					<div class="player-name player2">Player2</div>
+				</div>
+				<div class="server-info col-xs-1">
+					<span class="glyphicon glyphicon-arrow-left unvisible"></span>
+					<span class="glyphicon glyphicon-arrow-left unvisible"></span>
+				</div>
+				<div class="winner-info col-xs-1">
+					<span class="glyphicon glyphicon-ok unvisible"></span>
+					<span class="glyphicon glyphicon-ok unvisible"></span>
+				</div>
+				<div class="result result-wrapper col-xs-7">
+					<div class="pts col-xs-2">
+						<div class="pts-1">0</div>
+						<div class="pts-info">PTS</div>
+						<div class="pts-2">0</div>
+					</div>
+					<div class="set set1 col-xs-2">
+						<span class="score">0<span class="tiebreak"></span></span>
+						<div class="set-info">1</div>
+						<span class="score">0<span class="tiebreak"></span></span>
+					</div>
+					<div class="set set2 col-xs-2">
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+						<div class="set-info">2</div>
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+					</div>
+					<div class="set set3 col-xs-2">
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+						<div class="set-info">3</div>
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+					</div>
+					<div class="set set4 col-xs-2">
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+						<div class="set-info">4</div>
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+					</div>
+					<div class="set set5 col-xs-2">
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+						<div class="set-info">5</div>
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="input-point">
+			<div class="point-wrapper">
+				<button type="button" class="btn btn-warning fault-button">
+					<span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
+					FAULT
+				</button>
+			</div>
+			<div class="button-wrapper player1-button">
+				<div class="btn-group">
+				  <button type="button" class="btn btn-primary dropdown-toggle winner-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    WINNER<span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu">
+				    <li class="ace-button"><a href="#">SERVICE ACE</a></li>
+				    <li class="netpoint-button"><a href="#">NET POINT</a></li>
+				    <li class="otherpoint-button"><a href="#">OTHER</a></li>
+				  </ul>
+				</div>
+				<div class="btn-group">
+				  <button type="button" class="btn btn-danger dropdown-toggle error-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    EORROR<span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu">
+				    <li class="unferror-button"><a href="#">UNFORCED</a></li>
+				    <li class="ferror-button"><a href="#">FORCED</a></li>
+				    <li class="doublefault-button"><a href="#">DOUBLE FAULT</a></li>
+				  </ul>
+				</div>
+			</div>
+			<div class="button-wrapper player2-button">
+				<div class="btn-group">
+				  <button type="button" class="btn btn-primary dropdown-toggle winner-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    WINNER<span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu">
+				    <li class="ace-button"><a href="#">SERVICE ACE</a></li>
+				    <li class="netpoint-button"><a href="#">NET POINT</a></li>
+				    <li class="otherpoint-button"><a href="#">OTHER</a></li>
+				  </ul>
+				</div>
+				<div class="btn-group">
+				  <button type="button" class="btn btn-danger dropdown-toggle error-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    EORROR<span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu dropdown-menu-right">
+				    <li class="unferror-button"><a href="#">UNFORCED</a></li>
+				    <li class="ferror-button"><a href="#">FORCED</a></li>
+				    <li class="doublefault-button"><a href="#">DOUBLE FAULT</a></li>
+				  </ul>
+				</div>
+			</div>
+		<div class="stats-wrraper">
+			<div class="stats-player-name">
+				<div class="stats-player-name1">Player1</div>
+				<div class="stats-player-name2">Player2</div>
+			</div>
+			<div class="stats">
+				<div class="stats-detail">
+					<div class="aces1 stats-player1"></div>
+					<div class="stats-info">ACES</div>
+					<div class="aces2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="doubleFault1 stats-player1"></div>
+					<div class="stats-info">DOUBLE FAULTS</div>
+					<div class="doubleFault2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="firstServeIn1 stats-player1"></div>
+					<div class="stats-info">FIRST SERVE IN</div>
+					<div class="firstServeIn2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="winOn1stServe1 stats-player1"></div>
+					<div class="stats-info">WIN ON 1ST SERVE</div>
+					<div class="winOn1stServe2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="winOn2ndServe1 stats-player1"></div>
+					<div class="stats-info">WIN ON 2ND SERVE</div>
+					<div class="winOn2ndServe2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="netPointWon1 stats-player1"></div>
+					<div class="stats-info">NET POINTS WON</div>
+					<div class="netPointWon2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="breakPointWon1 stats-player1"></div>
+					<div class="stats-info">BREAK POINTS WON</div>
+					<div class="breakPointWon2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="receivePointWon1 stats-player1"></div>
+					<div class="stats-info">RECEIVING POINTS WON</div>
+					<div class="receivePointWon2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="winner1 stats-player1"></div>
+					<div class="stats-info">WINNER</div>
+					<div class="winner2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="unfError1 stats-player1"></div>
+					<div class="stats-info">UNFORCED ERRORS</div>
+					<div class="unfError2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="totalPoint1 stats-player1"></div>
+					<div class="stats-info">TOTAL POINTS WON</div>
+					<div class="totalPoint2 stats-player2"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>-->

@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.create(name: 'Guest Player', email: 'guest@test.com', password: '1234')
+kinds = Kind.create([
+    { name: 'ace' },
+    { name: 'netPoint' },
+    { name: 'otherPoint' },
+    { name: 'unfError' },
+    { name: 'forcedError' },
+    { name: 'doubleFault' }
+  ])
+services = Service.create([
+    { name: 'firstServiceIn' },
+    { name: 'secondServiceIn' }
+  ])

@@ -1,0 +1,191 @@
+<div class="wrapper">
+  <div class="score-board">
+	<%= form_for(@point, url: game_points_path(@game), html: {method: "post"}) do |f| %>
+	  <%= f.hidden_field :user_id, :value => @game.user_id %>
+	  <%= f.hidden_field :opponent_id, :value => @game.opponent_id %>
+	  <%= f.hidden_field :server_id %>
+	  <%= f.hidden_field :kind_id %>
+	  <%= f.hidden_field :point_user_id %>
+	  <%= f.hidden_field :service_id %>
+		<div class="status-wrapper">
+			<div class="match-status">
+				<div class="player-info col-xs-3">
+					<div class="player-name player1"><%= show_user_name(@game.user_id) %></div>
+					<div class="player-name player2"><%= show_user_name(@game.opponent_id) %></div>
+				</div>
+				<div class="server-info col-xs-1">
+					<span class="glyphicon glyphicon-arrow-left unvisible"></span>
+					<span class="glyphicon glyphicon-arrow-left unvisible"></span>
+				</div>
+				<div class="winner-info col-xs-1">
+					<span class="glyphicon glyphicon-ok unvisible"></span>
+					<span class="glyphicon glyphicon-ok unvisible"></span>
+				</div>
+				<div class="result result-wrapper col-xs-7">
+					<div class="pts col-xs-2">
+						<div class="pts-1">0</div>
+						<div class="pts-info">PTS</div>
+						<div class="pts-2">0</div>
+					</div>
+					<div class="set set1 col-xs-2">
+						<span class="score">0<span class="tiebreak"></span></span>
+						<div class="set-info">1</div>
+						<span class="score">0<span class="tiebreak"></span></span>
+					</div>
+					<div class="set set2 col-xs-2">
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+						<div class="set-info">2</div>
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+					</div>
+					<div class="set set3 col-xs-2">
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+						<div class="set-info">3</div>
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+					</div>
+					<div class="set set4 col-xs-2">
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+						<div class="set-info">4</div>
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+					</div>
+					<div class="set set5 col-xs-2">
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+						<div class="set-info">5</div>
+						<span class="score unvisible">0<span class="tiebreak"></span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="input-point">
+			<div class="button-wrapper">
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary player1-button" data-toggle="modal" data-target="#myModal">
+					<span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
+					<%= show_user_name(@game.user_id) %>
+				</button>
+				<button type="button" class="btn btn-warning player2-button" data-toggle="modal" data-target="#myModal">
+					<span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
+					<%= show_user_name(@game.opponent_id) %>
+				</button>
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				  <div class="modal-dialog modal-lg" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">Point Detail</h4>
+				      </div>
+				      <div class="modal-body point-detail">
+								<form class="form">
+								  <div class="form-group">
+										<label class="radio">
+										  <input type="radio" name="KindOptions" id="ace" value="1">
+										  <span class="text-primary">SERVICE ACE</span>
+										</label>
+										<label class="radio">
+										  <input type="radio" name="KindOptions" id="net-point" value="2">
+										  <span class="text-primary">NET POINT</span>
+										</label>
+										<label class="radio">
+										  <input type="radio" name="KindOptions" id="other-point" value="3">
+										  <span class="text-primary">OTHER POINT</span>
+										</label>
+										<label class="radio">               
+										  <input type="radio" name="KindOptions" id="unf-error" value="4">
+										  <span class="text-danger">UNFORCED ERROR</span>
+										</label>
+										<label class="radio">
+										  <input type="radio" name="KindOptions" id="forced-error" value="5">
+										  <span class="text-danger">FORCED ERROR</span>
+										</label>
+										<label class="radio">
+										  <input type="radio" name="KindOptions" id="double-fault" value="6">
+										  <span class="text-danger">DOUBLE FAULT</span>
+										</label>
+								  </div>
+								</form>
+								<form class="form">
+								  <div class="form-group">
+									<label class="radio">
+									  <input type="radio" name="ServiceOptions" id="first-service-in" value="1">
+									  <span class="text-primary">1st Service In</span>
+									</label>
+									<label class="radio">
+									  <input type="radio" name="ServiceOptions" id="second-service-in" value="2">
+									  <span class="text-warning">2nd Service In</span>
+									</label>
+								  </div>
+								</form>
+				      </div>
+				      <div class="modal-footer">
+						<%= f.submit 'Submit', class: 'btn btn-success btn-block point-submit' %>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+		<div class="stats-wrraper">
+			<!--<div class="stats-player-name">
+				<div class="stats-player-name1"><%= show_user_name(@game.user_id) %></div>
+				<div class="stats-player-name2"><%= show_user_name(@game.opponent_id) %></div>
+			</div>-->
+			<div class="stats">
+				<div class="stats-detail">
+					<div class="aces1 stats-player1"></div>
+					<div class="stats-info">ACES</div>
+					<div class="aces2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="doubleFault1 stats-player1"></div>
+					<div class="stats-info">DOUBLE FAULTS</div>
+					<div class="doubleFault2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="firstServeIn1 stats-player1"></div>
+					<div class="stats-info">FIRST SERVE IN</div>
+					<div class="firstServeIn2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="winOn1stServe1 stats-player1"></div>
+					<div class="stats-info">WIN ON 1ST SERVE</div>
+					<div class="winOn1stServe2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="winOn2ndServe1 stats-player1"></div>
+					<div class="stats-info">WIN ON 2ND SERVE</div>
+					<div class="winOn2ndServe2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="netPointWon1 stats-player1"></div>
+					<div class="stats-info">NET POINTS WON</div>
+					<div class="netPointWon2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="breakPointWon1 stats-player1"></div>
+					<div class="stats-info">BREAK POINTS WON</div>
+					<div class="breakPointWon2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="receivePointWon1 stats-player1"></div>
+					<div class="stats-info">RECEIVING POINTS WON</div>
+					<div class="receivePointWon2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="winner1 stats-player1"></div>
+					<div class="stats-info">WINNER</div>
+					<div class="winner2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="unfError1 stats-player1"></div>
+					<div class="stats-info">UNFORCED ERRORS</div>
+					<div class="unfError2 stats-player2"></div>
+				</div>
+				<div class="stats-detail">
+					<div class="totalPoint1 stats-player1"></div>
+					<div class="stats-info">TOTAL POINTS WON</div>
+					<div class="totalPoint2 stats-player2"></div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+  </div>
+</div>

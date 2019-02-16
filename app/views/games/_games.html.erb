@@ -1,0 +1,24 @@
+<table class="table table-hover">
+  <%= link_to 'New Game', new_game_path, class: "btn btn-success" %>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Opponent</th>
+      <th>Score</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% games.each do |game| %>
+    <tr>
+      <td><%= game.created_at %></td>
+      <td><%= show_user_name(game.opponent_id) %></td>
+      <td class="score"></td>
+      <td><%= link_to 'Show Game', game_path(game), class: "btn btn-primary" %></td>
+      <td><%= link_to 'Delete', game_path(game), method: :delete, data: {confirm: "You sure?"}, class: 'btn btn-danger' %>
+</td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
